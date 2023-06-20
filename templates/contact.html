@@ -1,0 +1,408 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    {% include 'base/headCss.html' %} {% comment %}
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+    <!-- <link rel="stylesheet" href="/static/css/footer.css"> -->
+    <!-- /* add font awesome link*/ -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Added 1 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Libraries -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet" />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+    <link href="lib/slick/slick.css" rel="stylesheet" />
+    <link href="lib/slick/slick-theme.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Libraries -->
+
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/contact.css" />
+
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="/static/css/nav2.css" />
+
+    <!-- Added 1 till -->
+
+    <link rel="stylesheet" href="/static/css/services.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <script src="/static/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}" />
+  </head>
+
+  <body>
+    <!-- header  -->
+
+    <div class="wrapper">
+      {% include 'base/topNav.html' %}
+      <!-- Top Bar End -->
+
+      <!-- Nav Bar Start -->
+      {% include 'base/navbar.html' %}
+      <!-- header ends -->
+      <div class="container-contact">
+        <h2 class="contact-h2">We would love to hear from you!</h2>
+        <div class="contact-info">
+          <p class="info-paragraph">
+            If you have any questions or comments about our programs and
+            services, please feel free to contact us using the information
+            below.<br /><br />
+            📞 Phone: {{contact.phone}} <br />
+            📩 Email: {{contact.email}}<br />
+            📌 Address: {{contact.address}} <br /><br />
+            If you would like to volunteer or donate to our organization, please
+            visit our Get Involved page for more information.<br /><br />
+            ⏱️ Our office hours are {{timing_data.start_time}} -
+            {{timing_data.end_time}}.<br /><br />
+            We do our best to respond to all inquiries within 1-2 business
+            days.<br /><br />
+            ⚠️ If you require immediate assistance or have an emergency, please
+            dial [{{contact.phone}}].
+          </p>
+          <p class="c">
+            Thank you for your support of our community services organization.
+            We look forward to hearing from you soon.
+          </p>
+        </div>
+      </div>
+
+      <!-- **************Latest Rooom************** -->
+      <section class="container mt-5">
+        <!--Contact heading-->
+        <div class="row">
+          <!-- <div class="col-sm-12 text-center mb-4">
+            <a class="btn btn-primary" target="_blank" href=""> Donate Now <i class="fa fa-dollar"></i></a>
+          </div> -->
+          <!--Grid column-->
+          <div class="col-sm-12 mb-4 col-md-5">
+            <!--Form with header-->
+            <form method="POST" action="{% url 'contact' %}">
+              {% csrf_token %}
+              <div class="card border-primary rounded-0">
+                <div class="card-header p-0">
+                  <div
+                    class="text-white text-center py-2"
+                    style="background-color: #00f"
+                  >
+                    <h3><i class="fa fa-envelope"></i> Write to us:</h3>
+                    <p class="m-0">
+                      We’ll write rarely, but only the best content.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-body p-3">
+                  <div class="form-group">
+                    <label> Your name </label>
+                    <div class="input-group">
+                      <input
+                        value=""
+                        type="text"
+                        name="name"
+                        class="form-control"
+                        id="inlineFormInputGroupUsername"
+                        placeholder="Your name"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Your email</label>
+                    <div class="input-group mb-2 mb-sm-0">
+                      <input
+                        type="email"
+                        value=""
+                        name="email"
+                        class="form-control"
+                        id="inlineFormInputGroupUsername"
+                        placeholder="Email"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Subject</label>
+                    <div class="input-group mb-2 mb-sm-0">
+                      <input
+                        type="text"
+                        name="subject"
+                        class="form-control"
+                        id="inlineFormInputGroupUsername"
+                        placeholder="Subject"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Message</label>
+                    <div class="input-group mb-2 mb-sm-0">
+                      <input type="text" class="form-control" name="message" />
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <input
+                      type="submit"
+                      name="submit"
+                      value="Submit"
+                      class="custom-btn"
+                      style="background-color: #2868e6"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-sm-12 col-md-7">
+            <!--Google map-->
+            <div class="mb-4">
+              <iframe
+                src="{{contact.map}}"
+                width="100%"
+                height="450"
+                frameborder="0"
+                style="border: 0"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0"
+              ></iframe>
+            </div>
+            <!--Buttons-->
+            <div class="row text-center">
+              <div class="col-md-4">
+                <a
+                  class="bg-primary px-3 py-2 rounded text-white mb-2 d-inline-block"
+                  ><i class="fa fa-map-marker"></i
+                ></a>
+                <p>{{contact.address}}</p>
+              </div>
+              <div class="col-md-4">
+                <a
+                  class="bg-primary px-3 py-2 rounded text-white mb-2 d-inline-block"
+                  ><i class="fa fa-phone"></i
+                ></a>
+                <p>{{contact.phone}}</p>
+              </div>
+              <div class="col-md-4">
+                <a
+                  class="bg-primary px-3 py-2 rounded text-white mb-2 d-inline-block"
+                  ><i class="fa fa-envelope"></i
+                ></a>
+                <p>{{contact.email}}</p>
+              </div>
+            </div>
+          </div>
+          <!--Grid column-->
+        </div>
+      </section>
+
+      {% include 'base/partners.html' %}
+      <!-- footer section starts  -->
+      {% include 'base/footer.html' %}
+    </div>
+
+    <!-- footer section ends -->
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        autopaly: {
+          delay: 300,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+    <script src="js/script.js"></script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper-container", {
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $(".customer-logos").slick({
+          slidesToShow: 6,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 1500,
+          arrows: false,
+          dots: false,
+          pauseOnHover: false,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 4,
+              },
+            },
+            {
+              breakpoint: 520,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+          ],
+        });
+      });
+    </script>
+    <script>
+      function slideCarousel() {
+        const carouselContainer = document.querySelector(
+          ".carousel-container-4"
+        );
+        const carousel = carouselContainer.querySelector(".carousel");
+        const slides = carousel.querySelectorAll(".slide");
+        const slideWidth = slides[0].offsetWidth;
+        let currentPosition = 0;
+
+        carousel.style.transform = `translateX(${currentPosition}px)`;
+
+        function nextSlide() {
+          if (currentPosition > -(slideWidth * (slides.length - 4))) {
+            currentPosition -= slideWidth;
+            carousel.style.transform = `translateX(${currentPosition}px)`;
+          }
+        }
+
+        function prevSlide() {
+          if (currentPosition !== 0) {
+            currentPosition += slideWidth;
+            carousel.style.transform = `translateX(${currentPosition}px)`;
+          }
+        }
+
+        carouselContainer.addEventListener("mouseenter", () => {
+          carouselContainer.addEventListener("mousemove", handleMouseMove);
+        });
+
+        carouselContainer.addEventListener("mouseleave", () => {
+          carouselContainer.removeEventListener("mousemove", handleMouseMove);
+        });
+
+        function handleMouseMove(event) {
+          const containerWidth = carouselContainer.offsetWidth;
+          const containerCenter = containerWidth / 2;
+          const mousePosition =
+            event.clientX - carouselContainer.getBoundingClientRect().left;
+
+          if (mousePosition < containerCenter && currentPosition !== 0) {
+            prevSlide();
+          } else if (
+            mousePosition > containerCenter &&
+            currentPosition > -(slideWidth * (slides.length - 4))
+          ) {
+            nextSlide();
+          }
+        }
+      }
+
+      slideCarousel();
+    </script>
+
+    <script>
+      // Get a reference to the button element
+      var button = document.getElementById("button");
+
+      // Add an onclick event listener to the button
+      button.addEventListener("click", function () {
+        // Redirect to mem.html
+        window.location.href = "mem.html";
+      });
+    </script>
+
+    <script>
+      function toggleNavbarToggler() {
+        const navbarToggler = document.getElementById("customNavbarToggler");
+        const navbarCollapse = document.querySelector(
+          ".custom-navbar-collapse"
+        );
+
+        if (window.innerWidth >= 992) {
+          navbarToggler.classList.add("hide-on-big-screens");
+          navbarCollapse.classList.remove("collapsed"); // Expand the menu on big screens
+        } else {
+          navbarToggler.classList.remove("hide-on-big-screens");
+          navbarCollapse.classList.add("collapsed"); // Collapse the menu on small screens
+        }
+      }
+
+      window.addEventListener("load", toggleNavbarToggler);
+      window.addEventListener("resize", toggleNavbarToggler);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var toggler = document.querySelector(".custom-navbar-toggler");
+        var navbarCollapse = document.querySelector(".custom-navbar-collapse");
+
+        toggler.addEventListener("click", function () {
+          navbarCollapse.classList.toggle("collapsed");
+        });
+
+        toggleNavbarToggler(); // Call the function when the DOM content is loaded
+      });
+    </script>
+  </body>
+</html>
