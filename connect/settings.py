@@ -80,23 +80,23 @@ WSGI_APPLICATION = "connect.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "connectu_connect",
-        "HOST":"localhost",
-        "PORT":"3306",
-        "USER":"connectu_connect",
-        "PASSWORD":"lipak@1234"
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": "connectu_connect",
+#         "HOST":"localhost",
+#         "PORT":"3306",
+#         "USER":"connectu_connect",
+#         "PASSWORD":"lipak@1234"
+#     }
+# }
 
 
 # Password validation
