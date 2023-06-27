@@ -80,7 +80,7 @@ class AboutUsView(View):
             "partners": partners,
             "events": events,
         }
-        return render(request, "aboutus.html", context)
+        return render(request, "aboutUs.html", context)
 
 
 class EventView(View):
