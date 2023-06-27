@@ -29,12 +29,19 @@ SECRET_KEY = "django-insecure--dd5f&onb$_2*rde=ddl7a9ro%q8i2cid(a#3hw%%3s0b5#7@%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["connectusme.com", "www.sconnectusme.com", "localhost:8000","127.0.0.1"]
+ALLOWED_HOSTS = [
+    "connectusme.com",
+    "www.sconnectusme.com",
+    "localhost:8000",
+    "127.0.0.1",
+    "localhost",
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "corsheaders",
     "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -48,6 +55,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -157,3 +165,10 @@ JAZZMIN_SETTINGS = {
     "site_brand": "Connect",
     "site_logo": "images/logo/blue1.jpg",
 }
+
+CORS_ALLOWED_ORIGINS = [
+    "https://connectusme.com",
+    "https://connectusme.com",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+]
