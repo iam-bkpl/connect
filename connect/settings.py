@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from connect.settings import DEBUG
 
 TIME_ZONE = "Asia/Kathmandu"
 USE_TZ = True
@@ -27,7 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure--dd5f&onb$_2*rde=ddl7a9ro%q8i2cid(a#3hw%%3s0b5#7@%"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "connectusme.com",
