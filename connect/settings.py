@@ -4,7 +4,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "django-insecure--dd5f&onb$_2*rde=ddl7a9ro%q8i2cid(a#3hw%%3s0b5#7@%"
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "connectusme.com",
@@ -14,7 +14,7 @@ ALLOWED_HOSTS = [
 ]
 
 INSTALLED_APPS = [
-    "jazzmin",
+    # "jazzmin",
     "corsheaders",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -87,6 +87,8 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "staticfiles")]
+
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -109,6 +111,7 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = ["https://connectusme.com"]
 
 
-STATICFILES_IGNORE_PATTERNS = [
-    "*jazzmin*",
+STATICFILES_EXCLUDE = [
+    "admin/js/cancel.js",
+    "admin/js/popup_response.js",
 ]
