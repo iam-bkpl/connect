@@ -165,11 +165,13 @@ class MembershipView(View):
         admin_bank = AdminBank.objects.last()
         sub_plans = SubscriptionPlan.objects.all()
         membership_photo = MembershopPhoto.objects.all().last()
+        partners = Partners.objects.all()
 
         context = {
             "admin_bank": admin_bank,
             "sub_plans": sub_plans,
             "membership_photo": membership_photo,
+            "partners": partners,
         }
         return render(request, "mem.html", context)
 
