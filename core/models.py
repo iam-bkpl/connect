@@ -206,3 +206,8 @@ class NewsLetter(models.Model):
 
     def __str__(self):
         return self.email
+
+
+class MembershopPhoto(models.Model):
+    name = models.CharField(max_length=255, null=True)
+    image = models.ImageField(upload_to="membership")

@@ -22,6 +22,7 @@ from core.models import (
     SubscriptionPlan,
     UserContact,
     NewsLetter,
+    MembershopPhoto,
 )
 
 # from core.views import download_csv
@@ -126,3 +127,4 @@ admin.site.register(SubscriptionPlan)
 admin.site.register(UserContact)
 admin.site.register(NewsLetter)
 admin.site.register(UsefulPage)
+admin.site.register(MembershopPhoto)

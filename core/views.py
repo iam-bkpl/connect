@@ -17,6 +17,7 @@ from .models import (
     Team,
     Timing,
     UserContact,
+    MembershopPhoto,
 )
 from django.utils import timezone
 import random
@@ -163,10 +164,12 @@ class MembershipView(View):
     def get(self, request):
         admin_bank = AdminBank.objects.last()
         sub_plans = SubscriptionPlan.objects.all()
+        membership_photo = MembershopPhoto.objects.all().last()
 
         context = {
             "admin_bank": admin_bank,
             "sub_plans": sub_plans,
+            "membership_photo": membership_photo,
         }
         return render(request, "mem.html", context)
 
