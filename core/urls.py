@@ -13,5 +13,5 @@ urlpatterns = [
     # path('usercontact/', views.UserContactView.as_view(),name='user-contact'),
     path("membership/", views.MembershipView.as_view(), name="membership"),
     path("newsletter/", views.NewsLetterView.as_view(), name="newsletter"),
-    path("download-csv/", views.download_csv, name="download_csv"),
+    # path("download-csv/", views.download_csv, name="download_csv"),
 ]
