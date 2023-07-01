@@ -26,33 +26,33 @@ from core.models import (
 
 # from core.views import download_csv
 
-# from .csv_generator import generate_membership_csv
+from .csv_generator import generate_membership_csv
 
 
-# class MembershipAdmin(admin.ModelAdmin):
-#     list_display = ["user", "phone", "membership_duration"]
+class MembershipAdmin(admin.ModelAdmin):
+    list_display = ["user", "phone", "membership_duration"]
 
-#     def download_csv(self, request, queryset):
-#         # Generate the CSV file
-#         csv_data = generate_membership_csv()
+    def download_csv(self, request, queryset):
+        # Generate the CSV file
+        csv_data = generate_membership_csv()
 
-#         # Create the HTTP response with CSV file
-#         response = HttpResponse(content_type="text/csv")
-#         response["Content-Disposition"] = 'attachment; filename="memberships.csv"'
+        # Create the HTTP response with CSV file
+        response = HttpResponse(content_type="text/csv")
+        response["Content-Disposition"] = 'attachment; filename="memberships.csv"'
 
-#         # Write the CSV file content to the response
-#         writer = csv.writer(response)
-#         writer.writerow(["User", "Phone", "Membership Duration"])  # Add header row
-#         for membership in queryset:
-#             writer.writerow(
-#                 [membership.user, membership.phone, membership.membership_duration]
-#             )
+        # Write the CSV file content to the response
+        writer = csv.writer(response)
+        writer.writerow(["User", "Phone", "Membership Duration"])  # Add header row
+        for membership in queryset:
+            writer.writerow(
+                [membership.user, membership.phone, membership.membership_duration]
+            )
 
-#         return response
+        return response
 
-#     download_csv.short_description = (
-#         "Download CSV"  # Action description in the admin site
-#     )
+    download_csv.short_description = (
+        "Download CSV"  # Action description in the admin site
+    )
 
 
 #
@@ -108,7 +108,7 @@ from core.models import (
 #     )
 
 
-# admin.site.add_action(MembershipAdmin.download_csv, "membership_download_csv")
+admin.site.add_action(MembershipAdmin.download_csv, "membership_download_csv")
 
 admin.site.register(AdminBank)
 admin.site.register(Timing)
@@ -120,8 +120,8 @@ admin.site.register(Partners)
 admin.site.register(Event)
 admin.site.register(MainService)
 admin.site.register(Contact)
-# admin.site.register(Membership, MembershipAdmin)
-admin.site.register(Membership)
+admin.site.register(Membership, MembershipAdmin)
+# admin.site.register(Membership)
 admin.site.register(SubscriptionPlan)
 admin.site.register(UserContact)
 admin.site.register(NewsLetter)
