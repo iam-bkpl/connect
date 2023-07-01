@@ -14,7 +14,7 @@ ALLOWED_HOSTS = [
 ]
 
 INSTALLED_APPS = [
-    # "jazzmin",
+    "jazzmin",
     "corsheaders",
     "django.contrib.admin",
     "django.contrib.auth",
