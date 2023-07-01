@@ -40,18 +40,28 @@
           </div>
         </div>
         <div class="right-side">
-          <div class="image-container">
-            <img
-              src="{{admin_bank.qr_code.url}}"
-              alt="Image Description"
-              height="260px"
-              width="260px"
-            />
-            <div class="qr-details">
-              <p>Name of Account Holder:{{admin_bank.account_name}}</p>
-              <p>Bank: {{admin_bank.bank_name}}</p>
-              <p>Branch: {{admin_bank.branch}}</p>
-              <p>Account Number: {{admin_bank.account_number}}</p>
+          <div class="  ">
+            <div class="row align-items-center">
+              <div class="col-4">
+                <div class="image-container">
+                  <img
+                    src="{{ admin_bank.qr_code.url }}"
+                    alt="Image Description"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="qr-details">
+                  <p><b>A/C:</b> {{ admin_bank.account_name }}</p>
+                  <p><b>Bank:</b> {{ admin_bank.bank_name }}</p>
+                  <p><b>Branch:</b> {{ admin_bank.branch }}</p>
+                  <p>
+                    <b>A/n:</b>
+                    {{ admin_bank.account_number }}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           <form
