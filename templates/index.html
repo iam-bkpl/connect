@@ -29,36 +29,7 @@
       {% include 'base/navbar.html' %}
       <!--Navbar ends -->
 
-      {% comment %}
-      <div class="carousel slide" id="myCarousel" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <div class="carousel-inner">
-          {% for image in home_page_image %} {% endfor %}
-          <div class="item active">
-            <img src="/static/images/Sliders/aston-martin.jpg" alt="" />
-          </div>
-
-          <div class="item">
-            <img src="/static/images/Sliders/audi-rs-e-tron-gt.jpg" alt="" />
-          </div>
-          <div class="item">
-            <img src="/static/images/Sliders/maserati-mc20.jpg" alt="" />
-          </div>
-        </div>
-        <!-- Carousel nav -->
-        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="carousel-control right" href="#myCarousel" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>
-      {% endcomment %}
+    
 
       <div class="carousel slide" id="myCarousel" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -123,90 +94,7 @@
         </div>
       </section>
 
-      {% comment %}
-      <section style="height: 450px">
-        <h3 style="color: #00f; text-align: center">Our Events</h3>
-
-        <div id="carousel">
-          {% for event in events %}
-          <div class="{{event.id}} selected ">
-            <img src="{{event.image.url}}" alt="blog" />
-          </div>
-          {% endfor %}
-          <!---->
-
-          {% comment %}
-          <div class="">
-            <img src="/static/images/Service Room/room3.jpeg" />
-          </div>
-          {% endcomment %} {% comment %}
-          <div class="">
-            <img
-              src="https://i1.sndcdn.com/artworks-000158708482-k160g1-t500x500.jpg"
-            />
-          </div>
-          {% endcomment %} {% comment %}
-          <div class="selected">
-            <img
-              src="https://i1.sndcdn.com/artworks-000062423439-lf7ll2-t500x500.jpg"
-            />
-          </div>
-          {% endcomment %} {% comment %}
-          <div class="next">
-            <img
-              src="https://i1.sndcdn.com/artworks-000028787381-1vad7y-t500x500.jpg"
-            />
-          </div>
-          {% endcomment %} {% comment %}
-          <div class="nextRightSecond">
-            <img src="/static/images/Service Room/room7.jpg" />
-          </div>
-          {% endcomment %} {% comment %}
-          <div class="hideRight">
-            <img src="/static/images/Service Room/room6.jpeg" />
-          </div>
-        </div>
-        <div
-          class="buuyttons"
-          style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 28px;
-          "
-        >
-          <button id="prev"><i class="fa-solid fa-arrow-left"></i></button>
-          &nbsp
-          <button id="next"><i class="fa-solid fa-arrow-right"></i></button>
-        </div>
-      </section>
-      {% endcomment %}
-      {% comment %} <section style="height: 450px">
-        <h3 style="color: #00f; text-align: center">Our Events</h3>
-
-        <div id="carousel">
-          {% for event in events %}
-          <div class="{{ event.class }} selected">
-            <img src="{{ event.image.url }}" />
-          </div>
-          {% endfor %}
-        </div>
-
-        <div
-          class="buuyttons"
-          style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 28px;
-          "
-        >
-          <button id="prev"><i class="fa-solid fa-arrow-left"></i></button
-          >&nbsp;
-          <button id="next"><i class="fa-solid fa-arrow-right"></i></button>
-        </div>
-      </section> {% endcomment %}
-
+    
 {% include 'base/our_events.html' %}
       <!--************Events*********-->
       <section style="margin-top: 34px">
@@ -233,7 +121,7 @@
     <!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
 
     <!-- custom js file link  -->
-    <script src="js/script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>

@@ -6,67 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Appartments Detail</title>
-    {% comment %}
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/static/css/footer.css" />
-    <!-- /* add font awesome link*/ -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- Added 1 -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- CSS Libraries -->
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet" />
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
-    <link href="lib/slick/slick.css" rel="stylesheet" />
-    <link href="lib/slick/slick-theme.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- CSS Libraries -->
-    <link rel="stylesheet" href="/static/css/aboutus.css" />
-
-    <link rel="stylesheet" href="/static/css/style.css" />
-    <link rel="stylesheet" href="/static/css/nav2.css" />
-
-    <!-- Added 1 till -->
-
-    <link rel="stylesheet" href="/static/css/services.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
-    <script src="/static/js/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    {% endcomment %} {% include 'base/headCss.html' %}
+    {% include 'base/headCss.html' %}
     <link rel="stylesheet" href="{% static 'css/link.css' %}" />
   </head>
 
@@ -103,24 +43,6 @@
                 </p>
               </div>
             </div>
-            <div class="right-column">
-              <div class="card card1">
-                <div class="card-header header1">
-                  <h4>Card 1 Header</h4>
-                </div>
-                <div class="card-content">
-                  <p>Card 1 content goes here.</p>
-                </div>
-              </div>
-              <div class="card card2">
-                <div class="card-header header2">
-                  <h4>Card 2 Header</h4>
-                </div>
-                <div class="card-content">
-                  <p>Card 2 content goes here.</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -138,11 +60,11 @@
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
     <!-- custom js file link  -->
-    <script src="js/script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-    <script src="js/script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
