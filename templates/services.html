@@ -123,7 +123,7 @@
           <div class="p-6">
             <h2 class="tracking-widest text-xs title-font font-medium text-gray-600 mb-1">{{service.name}}</h2>
             <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{service.name}}</h1>
-            <p class="leading-relaxed mb-3">{{service.description}}</p>
+            <p class="leading-relaxed mb-3">  {{event.description|truncatechars:25}}</p>
             <div class="flex items-center flex-wrap">
               <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" onclick="showPopup('popup{{service.id}}')">Learn More</button>
             </div>
