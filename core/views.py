@@ -10,24 +10,24 @@ import random
 import csv
 from django.http import HttpResponse
 
-# from .csv_generator import generate_membership_csv
+from .csv_generator import generate_membership_csv
 
 
-# def download_csv(request):
-#     # Generate the CSV file
-#     generate_membership_csv()
 
-#     # Set the appropriate response headers
-#     response = HttpResponse(content_type="text/csv")
-#     response["Content-Disposition"] = 'attachment; filename="memberships.csv"'
+def download_csv(request):
+    # Generate the CSV file
+    generate_membership_csv()
 
-#     # Write the CSV file content to the response
-#     with open("memberships.csv", "r") as csvfile:
-#         csv_data = csvfile.read()
-#         response.write(csv_data)
+    # Set the appropriate response headers
+    response = HttpResponse(content_type="text/csv")
+    response["Content-Disposition"] = 'attachment; filename="memberships.csv"'
 
-#     return response
+    # Write the CSV file content to the response
+    with open("memberships.csv", "r") as csvfile:
+        csv_data = csvfile.read()
+        response.write(csv_data)
 
+    return response
 
 class HomeView(View):
     def get(self, request):

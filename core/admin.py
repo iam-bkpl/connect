@@ -28,7 +28,7 @@ from core.models import (
 
 # from core.views import download_csv
 
-# from .csv_generator import generate_membership_csv
+from .csv_generator import generate_membership_csv
 
 
 class MembershipAdmin(admin.ModelAdmin):
