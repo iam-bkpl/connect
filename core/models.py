@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from connect.settings import STATIC_ROOT
 
 
 class AdminBank(models.Model):
@@ -47,10 +48,13 @@ class AboutUs(models.Model):
         return self.text
 
 
-# class SocialLink(models.Model):
-#   name = models.CharField(max_length=255, blank=True, null=True)
-#   link = models.URLField(blank=True,null=True)
-
+class HomeAboutUs(models.Model):
+    image = models.ImageField(upload_to="homeAbout/images", blank=True, null=True)
+    text = models.TextField(blank=True, null=True)
+    
+    def __str__(self):
+        return self.text
+    
 
 class Team(models.Model):
     image = models.ImageField(upload_to="team/images", blank=True, null=True)
@@ -163,9 +167,9 @@ class Membership(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     address = models.CharField(max_length=255, blank=True, null=True)
     phone = models.CharField(max_length=255, blank=True, null=True)
-    profile = models.ImageField(upload_to="PP")
-    passport_front = models.FileField(upload_to="passport")
-    passport_back = models.FileField(upload_to="passport")
+    profile = models.ImageField(upload_to="PP", blank=True, null=True)
+    passport_front = models.FileField(upload_to="passport", blank=True, null=True)
+    passport_back = models.FileField(upload_to="passport", blank=True, null=True)
     membership_type = models.CharField(
         max_length=255,
         choices=MEMBERSHIP_TYPE_CHOICES,
