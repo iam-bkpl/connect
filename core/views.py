@@ -2,57 +2,42 @@ from django.contrib.auth.models import User
 import django.urls
 from django.views import View
 from django.shortcuts import render, redirect
-from .models import (
-    AboutUs,
-    AdminBank,
-    Contact,
-    Event,
-    HomePageImage,
-    MainService,
-    Membership,
-    NewsLetter,
-    Partners,
-    Service,
-    SubscriptionPlan,
-    Team,
-    Timing,
-    UserContact,
-    MembershopPhoto,
-)
+from .models import (AboutUs, AdminBank, Contact, Event, HomeAboutUs, HomePageImage, MainService,
+    Membership, MembershopPhoto, NewsLetter, Partners, Service, SubscriptionPlan, Team, Timing,
+    UserContact)
 from django.utils import timezone
 import random
 import csv
 from django.http import HttpResponse
 
-from .csv_generator import generate_membership_csv
+# from .csv_generator import generate_membership_csv
 
 
-def download_csv(request):
-    # Generate the CSV file
-    generate_membership_csv()
+# def download_csv(request):
+#     # Generate the CSV file
+#     generate_membership_csv()
 
-    # Set the appropriate response headers
-    response = HttpResponse(content_type="text/csv")
-    response["Content-Disposition"] = 'attachment; filename="memberships.csv"'
+#     # Set the appropriate response headers
+#     response = HttpResponse(content_type="text/csv")
+#     response["Content-Disposition"] = 'attachment; filename="memberships.csv"'
 
-    # Write the CSV file content to the response
-    with open("memberships.csv", "r") as csvfile:
-        csv_data = csvfile.read()
-        response.write(csv_data)
+#     # Write the CSV file content to the response
+#     with open("memberships.csv", "r") as csvfile:
+#         csv_data = csvfile.read()
+#         response.write(csv_data)
 
-    return response
+#     return response
 
 
 class HomeView(View):
     def get(self, request):
-        aboutus = AboutUs.objects.first()
+        aboutus = HomeAboutUs.objects.first()
         teams = Team.objects.all()
         services = Service.objects.all()
         partners = Partners.objects.all()
         events = Event.objects.all()
         home_page_images = HomePageImage.objects.all()
-        # timing = Timing.objects.last()
-        # contact = Contact.objects.last()
+
 
         context = {
             "about": aboutus,

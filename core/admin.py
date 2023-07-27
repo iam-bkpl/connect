@@ -23,11 +23,12 @@ from core.models import (
     UserContact,
     NewsLetter,
     MembershopPhoto,
+    HomeAboutUs,
 )
 
 # from core.views import download_csv
 
-from .csv_generator import generate_membership_csv
+# from .csv_generator import generate_membership_csv
 
 
 class MembershipAdmin(admin.ModelAdmin):
@@ -115,6 +116,7 @@ admin.site.register(AdminBank)
 admin.site.register(Timing)
 admin.site.register(HomePageImage)
 admin.site.register(AboutUs)
+admin.site.register(HomeAboutUs)
 admin.site.register(Team)
 admin.site.register(Service)
 admin.site.register(Partners)
